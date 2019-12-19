@@ -13,9 +13,9 @@ let readyToReset = false;
 let choice;
 let moebing = false;
 const a = new Complex(1, 0);
-const b = new Complex(0, 1);
-const c = new Complex(1, 0);
-const d = new Complex(0, 0);
+const b = new Complex(0, -1);
+const c = new Complex(0, 0);
+const d = new Complex(1, 0);
 
 function setup() {
   let canvas = createCanvas(650, 400, WEBGL);
