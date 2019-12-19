@@ -3,8 +3,7 @@ body {
 	margin-left: 1em;
 
 }
-
-#execute {
+input[type="button"] {
   background: #99ddee; /*#203888;*/
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
@@ -16,7 +15,10 @@ body {
   text-decoration: none;
   margin: 4px;
 }
-
+input[type="button"]:disabled {
+	background:  #cccccc;
+	 background-color: #a0a0a0;
+}
 span {
 	margin-left: 2em;
 }
