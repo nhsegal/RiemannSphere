@@ -30,19 +30,20 @@
   <p>Select the transformation you want and then hit "GO!" to watch the Riemann sphere and/or complex plane transform</p>
   <ul>
     <input type="radio" name="myFunction" value=1 id="moebius"> $f(z) = \frac{a z + b}{c z + d}$ <br>
-    <a style="margin-left: 40px">$Re(a) = $<input type="text" id="Ar" size="3" value="0"></input>&nbsp&nbsp$Im(a) = $&nbsp<input type="text" id="Ai" size="3" value="0"></input></a> <br>
-    <a style="margin-left: 40px">$Re(b) = $<input type="text" id="Br" size="3" value="1"></input>&nbsp&nbsp$Im(b) = $&nbsp<input type="text" id="Bi" size="3" value="0"></input></a> <br>
+    <a style="margin-left: 40px">$Re(a) = $<input type="text" id="Ar" size="3" value="1"></input>&nbsp&nbsp$Im(a) = $&nbsp<input type="text" id="Ai" size="3" value="0"></input></a> <br>
+    <a style="margin-left: 40px">$Re(b) = $<input type="text" id="Br" size="3" value="0"></input>&nbsp&nbsp$Im(b) = $&nbsp<input type="text" id="Bi" size="3" value="1"></input></a> <br>
     <a style="margin-left: 40px">$Re(c) = $<input type="text" id="Cr" size="3" value="1"></input>&nbsp&nbsp$Im(c) = $&nbsp<input type="text" id="Ci" size="3" value="0"></input></a> <br>
     <a style="margin-left: 40px">$Re(d) = $<input type="text" id="Dr" size="3" value="0"></input>&nbsp&nbsp$Im(d) = $&nbsp<input type="text" id="Di" size="3" value="0"></input></a> <br>
 
     <input type="radio" name="myFunction" value=2 id="ln"> $f(z) = \ln{z}$<br>
     <input type="radio" name="myFunction" value=3 id="exp">$f(z) = e^{z}$<br>
+      <input type="radio" name="myFunction" value=4 id="tan">$f(z) = \tan{z}$<br>
 
 
   </ul>
-  &nbsp&nbsp&nbsp&nbsp<input type="checkbox" id="sphere" > Show Riemann Sphere
-  &nbsp&nbsp&nbsp&nbsp<input type="checkbox" id="plane" > Show Complex Plane<br>
-  <input type="button" id="execute" value="GO!" onclick="startAnimating()">
+  &nbsp&nbsp&nbsp&nbsp<input type="checkbox" id="sphere" checked> Show Riemann Sphere
+  &nbsp&nbsp&nbsp&nbsp<input type="checkbox" id="plane"> Show Complex Plane<br>
+  <input class='x' style="" type="button" id="execute" value="GO!" onclick="startAnimating()">
   <div id="sketch-holder"></div>
 
 
