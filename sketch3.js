@@ -12,8 +12,8 @@ let animating = false;
 let readyToReset = false;
 let choice;
 let moebing = false;
-const a = new Complex(0, 0);
-const b = new Complex(1, 0);
+const a = new Complex(1, 0);
+const b = new Complex(0, 1);
 const c = new Complex(1, 0);
 const d = new Complex(0, 0);
 
@@ -46,6 +46,11 @@ function setup() {
 function draw() {
   frameRate(30);
   background(0, 0, 90);
+  if (!document.querySelector('[name="myFunction"]:checked')) {
+    document.getElementById('execute').disabled = true;
+  } else {
+    document.getElementById('execute').disabled = false;
+  }
   orbitControl();
   stroke(0);
   strokeWeight(.5);
@@ -104,10 +109,14 @@ function E(z) {
   return q;
 }
 
-
-
 function altMoeb(z) {
   let w = ((z.mul(a)).add(b)).div((z.mul(c)).add(d));
+  let q = z.mul(1 - amt).add(w.mul(amt))
+  return q
+}
+
+function Tan(z) {
+  let w = z.tan();
   let q = z.mul(1 - amt).add(w.mul(amt))
   return q
 }
@@ -115,11 +124,11 @@ function altMoeb(z) {
 
 function display() {
   for (let i = 0; i < range.length; i++) {
-    if(document.getElementById("sphere").checked){
+    if (document.getElementById("sphere").checked) {
       range[i].toSphere();
     }
-    if(document.getElementById("plane").checked){
-    range[i].toPlane();
+    if (document.getElementById("plane").checked) {
+      range[i].toPlane();
     }
 
   }
@@ -162,9 +171,13 @@ function calculateAndAnimate() {
     for (let i = 0; i < range.length; i++) {
       range[i].num = E(domain[i].num);
     };
+  } else if (choice == 4) {
+    for (let i = 0; i < range.length; i++) {
+      range[i].num = Tan(domain[i].num);
+    };
   }
 
-amt = amt + step;
+  amt = amt + step;
 }
 
 function startAnimating() {
@@ -194,6 +207,7 @@ function fullReset() {
   document.getElementById('moebius').checked = false;
   document.getElementById('ln').checked = false;
   document.getElementById('exp').checked = false;
+  document.getElementById('tan').checked = false;
   domain = [];
   range = [];
   for (let i = 0; i < TWO_PI; i = i + TWO_PI / resTheta) {
